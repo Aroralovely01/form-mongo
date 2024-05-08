@@ -1,0 +1,35 @@
+ <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+ <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+<a href="/api/add">Add New Employee</a>
+<hr>
+
+
+<table class="table table-hover" >
+      <thead>
+        <tr class="warning">
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Salary</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach(function(name) { %>
+        <tr class="table-info">
+          <td><%= name.id %></td>
+          <td><%= name.name %></td>
+          <td><%= name.salary %></td>
+          <td><%= name.age %></td>
+
+<td> <a href ="http://127.0.0.1:8888/employeesdelete/<%= name.id %>" class="btn btn-danger">Delete</a>
+ <a href ="http://127.0.0.1:8888/api/employeesfind/<%= name.id %>" class="btn btn-success">Edit</a>
+</td>
+
+        </tr>
+       <% }); %>
+      </tbody>
+    </table>
+  
+
